@@ -27,9 +27,8 @@ function App() {
     setCount(newCount);
   };
 
-  const isMultiple = count % 2 === 0 ? true : false;
-
-  const countClass = isMultiple ? "prendido" : "apagado" 
+  const squareClass = isOn? "square-on" : "square-off";
+  const squareText= isOn? "ON" : "OFF"
 
   return (
     <div className="App">
@@ -41,11 +40,12 @@ function App() {
         <button onClick={() => handleClick(true)}>Increase</button>
         <button onClick={() => handleClick(false)}>Decrease</button>
 
-        <div className = {`square ${isOn? "square-on" : "square-off"}`}>{isOn? 'ON' : "OFF"}</div>
-        <button onClick={() => setIsOn(true)}>ON</button>
-        <button onClick={() => setIsOn(false)}>OFF</button>
-
-
+        <div className = {`square ${squareClass}`}       
+        onMouseOver={() => setIsOn(true)}
+        onMouseOut={() => setIsOn(false)}
+        >
+          {squareText}
+        </div>
       </header>
     </div>
   );
