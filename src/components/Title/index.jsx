@@ -1,13 +1,12 @@
 import './Title.css';
 
-//export default function Title(props){
-    //return (
-      //  <h1>{props.text.toUpperCase()}</h1>
-  //  )
-//} Primer componente es una funcion
-
-export default function Title(props){
+export default function Title({ text }) {
     return (
-        <p>{props.pElement.toUpperCase()}</p>
+        <h1>{text.toUpperCase()}</h1>
     )
-} 
+}
+
+
+// Crear un componente llamado FullName, el cual nos regrese nuestro nombre completo, como parrafo, dados los props
+// firstName, lastName
+// Notas: el apellido puede no ir

@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+
+.square{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  width: 200px;
+  background-color: aqua;
+}
+
+.square-on{
+background-color: yellow;
+}
+
+.square-off{
+  background-color: black;
+}
