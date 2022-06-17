@@ -2,50 +2,20 @@ import { useState } from "react";
 
 import "./App.css";
 
-// Components
-import Title from "./components/Title";
-import FullName from "./components/FullName";
-
 function App() {
-  // Local state
-  // [0] = valor del state
-  // [1] = función que actualiza el state
-  // si `useState` recibe un argumento, este será el valor inicial del estado
-  // si no el estado es undefined
-  const [count, setCount] = useState(0);
-  const [isOn, setIsOn] = useState(false);
-  console.log(count, "COUNT");
-  console.log(setCount, "SET_COUNT");
+  const [itemActive, setItemActive] = useState(null)
 
-  const handleClick = (increase) => {
-    let newCount = count;
-    if (increase) {
-      newCount = newCount + 1;
-    } else {
-      newCount = newCount - 1;
-    }
-    setCount(newCount);
-  };
-
-  const squareClass = isOn? "square-on" : "square-off";
-  const squareText= isOn? "ON" : "OFF"
-
+  constIsActive = (itemNumber)=> itemNumber === itemActive
   return (
     <div className="App">
       <header className="App-header">
-        <Title text="Aaron"></Title>
-        <FullName firstName="Luis" lastName="Vera"></FullName>
-
-        <p>Counter: {count}</p>
-        <button onClick={() => handleClick(true)}>Increase</button>
-        <button onClick={() => handleClick(false)}>Decrease</button>
-
-        <div className = {`square ${squareClass}`}       
-        onMouseOver={() => setIsOn(true)}
-        onMouseOut={() => setIsOn(false)}
-        >
-          {squareText}
-        </div>
+        <ul>
+          <li onClick = {()=>setItemActive(1)} className={`${isActive(1) ? 'active': "inactive"}`}>Texto1</li>
+          <li onClick = {()=>setItemActive(2)} className={`${isActive(2) ? 'active': "inactive"}`}>Texto2</li>
+          <li onClick = {()=>setItemActive(3)} className={`${isActive(3) ? 'active': "inactive"}`}>Texto3</li>
+          <li onClick = {()=>setItemActive(4)} className={`${isActive(4) ? 'active': "inactive"}`}>Texto4</li>
+          <li onClick = {()=>setItemActive(5)} className={`${isActive(5) ? 'active': "inactive"}`}>Texto5</li>   
+        </ul>
       </header>
     </div>
   );

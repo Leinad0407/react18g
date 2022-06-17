@@ -13,6 +13,16 @@
   }
 }
 
+li {
+  cursor: pointer;
+}
+
+li:hover {
+opacity: 0.8;
+}
+
+li 
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
