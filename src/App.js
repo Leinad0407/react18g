@@ -1,5 +1,9 @@
 import { useState } from "react";
 
+//components
+import Card from "./components/Card"
+
+
 import "./App.css";
 
 function App() {
@@ -37,30 +41,15 @@ function App() {
   ];
 
 const kodersUI= koders.map(({firstName, lastName, age, gender, photoURL}, index)=>(
-<div className="card-container">
-  <div>
-    <img alt="profile" className="card-image" src={photoURL}/>
-  </div>
-  <div className="card-content">
-    <div className="card-item-content">
-    <p>Nombre</p>
-    <p>{firstName} {lastName}</p>
-    </div>
-    <div className="card-item-content">
-      <p>Edad</p>
-      <p>{age}</p>
-    </div>
-    <div className="card-item-content">
-      <p>Genero</p>
-      <p>{gender}</p>
-    </div>
-  </div>
-</div>
+<Card index={index} photoURL={photoURL} firstName={firstName} lastName={lastName} age={age} gender={gender}/>
 ));
 
   console.log(kodersUI)
   return (
     <div className="App">
+      <div className="main-container">
+        <div className="container">{kodersUI}</div> 
+      </div>
       <header className="App-header">
       <ul>{kodersUI}</ul>
       </header>
