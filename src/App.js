@@ -10,6 +10,8 @@ function App() {
   const [age, setAge] = useState("");
   const [gender, setGender] = useState("");
   const [photoURL, setPhotoURL] = useState("");
+  const [amountMXN, setAmountMXN] = useState(null);
+  const [amountUSD, setAmountUSD] = useState(null);
 
   const [koders, setKoders] = useState([
     {
@@ -67,7 +69,17 @@ function App() {
     setPhotoURL("");
   };
 
-  console.log(koders, "KODERS");
+  const handleChangeAmount = ({ target: { value } }, from) => {
+    const USD = 20.16;
+    // from = USD o MXN
+    if (from === "USD") {
+      setAmountMXN(value * USD);
+      setAmountUSD(value);
+    } else {
+      setAmountMXN(value);
+      setAmountUSD(value / USD);
+    }
+  };
 
   return (
     <div className="App">
@@ -76,6 +88,7 @@ function App() {
       </div>
       <form onSubmit={handleSubmit}>
         <input
+          placeholder="First name"
           value={firstName}
           onChange={(event) => setFirstName(event.target.value)}
         />
@@ -94,8 +107,27 @@ function App() {
         />
         <button type="submit">Agregar Koder</button>
       </form>
+
+      <div>
+        <input
+          type="number"
+          value={amountMXN}
+          onChange={(e) => handleChangeAmount(e, "MXN")}
+        />
+        <input
+          type="number"
+          value={amountUSD}
+          onChange={(e) => handleChangeAmount(e, "USD")}
+        />
+      </div>
     </div>
   );
 }
 
 export default App;
+// 1. El usuario escribe la cantidad NUMERICA EN PESOS MEXICANOS en el input
+// 3. Se renderiza el valor en dolares
+
+// Notas:
+// El input no puede recibir letras solo numeros
+// El output tiene que estar formateado a dos decimales
