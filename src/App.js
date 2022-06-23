@@ -12,6 +12,10 @@ function App() {
   const [photoURL, setPhotoURL] = useState("");
   const [amountMXN, setAmountMXN] = useState(null);
   const [amountUSD, setAmountUSD] = useState(null);
+  const [numberCard, setNumberCard] = useState("");
+  const [nameUser, setNameUser]= useState("");
+  const[validThru, setValidThru] = useState("");
+  const[cvc, setCVC] = useState("");
 
   const [koders, setKoders] = useState([
     {
@@ -81,6 +85,27 @@ function App() {
     }
   };
 
+  const handleChangeNumberCard = ({ target: {value}}, from) => {
+    const newNumberCard = Number(value);
+    setNumberCard(newNumberCard)
+  }
+
+  const handleChangeNameUser = ({ target: {value}}, from) => {
+    const newNameUser = value;
+    setNameUser(newNameUser)
+  }
+
+  const handleChangeValidThru = ({ target: {value}}, from) => {
+    const newValidThru = value;
+    setValidThru(newValidThru)
+  }
+
+  const handleChangeCVC = ({ target: {value}}, from) => {
+    const newCVC = value;
+    setCVC(newCVC)
+  }
+
+
   return (
     <div className="App">
       <div className="main-container">
@@ -120,6 +145,26 @@ function App() {
           onChange={(e) => handleChangeAmount(e, "USD")}
         />
       </div>
+      <div className="conteinerCreditCard">
+      <div className="changesCreditCard">
+      <p>Credit Card</p>
+      <p>{numberCard}</p>
+      <p>{nameUser}</p>
+      <p>{validThru}</p>
+      <p>{cvc}</p>
+      </div>
+      <div className="inputCreditCard">
+        
+        
+        <input placeholder="numberCard" value={numberCard} onChange={handleChangeNumberCard}/>
+        <input placeholder="User Name" value={nameUser} onChange={handleChangeNameUser}/>
+        <input placeholder="ValidThru" value={validThru} onChange={handleChangeValidThru}/>
+        <input placeholder="CVC" value={cvc} onChange={handleChangeCVC}/>
+
+      </div>
+
+      </div>
+      
     </div>
   );
 }
