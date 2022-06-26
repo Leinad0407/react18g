@@ -3,18 +3,19 @@ import "./App.css";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Profile from "./pages/Profile";
+import AppContainer from "./containers/AppContainer";
 
 function App() {
   return (
     <div className="App">
       <h1>Welcome to React Router!</h1>
-      <div>
-        {/* <nav className="navbar">
+      {/* <div>
+        <nav className="navbar">
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>
           <Link to="/profile">Profile</Link>
-        </nav> */}
-      </div>
+        </nav>
+      </div> */}
       <Routes>
         <Route path="/" element={<p>Landing page</p>} />
         {/* <Route path="/about" element={<About />} />
