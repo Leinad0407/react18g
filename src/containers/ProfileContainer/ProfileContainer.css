@@ -1,0 +1,14 @@
+.navbarProfile{
+    background-color: rgb(135, 168, 140);
+
+}
+
+.navbarProfile > a {
+    margin: 5px 10px;
+    text-decoration: none;
+    text-align: center;
+
+
+
+}
+

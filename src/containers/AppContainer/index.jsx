@@ -5,7 +5,7 @@ export default function AppContainer() {
     <div>
       <h1>App</h1>
       <nav className="navbar">
-        <Link to="">Home</Link>
+        <Link to="/">Home</Link>
         <Link to="about">About</Link>
         <Link to="profile">Profile</Link>
       </nav>
