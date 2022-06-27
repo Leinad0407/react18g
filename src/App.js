@@ -2,6 +2,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import "./containers/ProfileContainer/ProfileContainer.css";
 import "./containers/AppContainer/AppContainer.css";
+import "./pages/Home/Home.css";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Profile from "./pages/Profile";

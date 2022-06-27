@@ -11,5 +11,29 @@ export default function Home() {
     };
     getCharactersQuery();
   }, []);
-  return <h1>Welcome</h1>;
+  return characters.map((character) => (
+    <div className="container">
+      <div className="imageContainer">
+        <img src={character.image} alt="img" />
+      </div>
+      <div className="infoContainer">
+        <div>
+          <p>Name</p>
+          <p>{character.name}</p>
+        </div>
+        <div>
+          <p>Gender</p>
+          <p>{character.gender}</p>
+        </div>
+        <div>
+          <p>specie</p>
+          <p>{character.species}</p>
+        </div>
+        <div>
+          <p>status</p>
+          <p>{character.status}</p>
+        </div>
+      </div>
+    </div>
+  ));
 }
