@@ -1,13 +1,10 @@
-import { Outlet, Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 export default function ProfileContainer() {
   return (
     <div>
-      <nav className="navbarProfile">
-        <Link to="InfoPage">Info</Link>
-        <Link to="EdithPage">Edith</Link>
-      </nav>
-
+      <Link to="detail">Profile</Link>
+      <Link to="about">About</Link>
       <Outlet />
     </div>
   );

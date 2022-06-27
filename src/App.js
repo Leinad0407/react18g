@@ -1,13 +1,12 @@
 import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import "./containers/ProfileContainer/ProfileContainer.css";
+import "./containers/AppContainer/AppContainer.css";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Profile from "./pages/Profile";
 import AppContainer from "./containers/AppContainer";
 import ProfileContainer from "./containers/ProfileContainer";
-import InfoPage from "./pages/Info";
-import EdithPage from "./pages/Edith";
 
 function App() {
   return (
@@ -29,10 +28,9 @@ function App() {
         <Route path="app" element={<AppContainer />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
-          <Route path="profile" element={<Profile />} />
-          <Route path="profile" element={<ProfileContainer />}>
-            <Route index element={<InfoPage />} />
-            <Route path="profileEdith" element={<EdithPage />} />
+          <Route path="profile" alement={<ProfileContainer />}>
+            <Route index path="detail" element={<Profile />} />
+            <Route path="about" element={<About />} />
           </Route>
         </Route>
       </Routes>

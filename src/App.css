@@ -1,14 +1,16 @@
-.navbar{
+html, 
+body{
+  height: 100%;
   width: 100%;
-  background-color: rgb(101, 101, 207);
-  color: black;
-  padding: 20px;
-  
 }
 
-.navbar > a {
-  color: white;
-  text-decoration: none;
-  margin: 2px 5px;
+#root{
+  height: 100%;
+  width: 100%;
+}
 
+.App{
+  height: 100%;
+  width: 100%;
+  background-color: white;
 }

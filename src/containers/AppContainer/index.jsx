@@ -2,14 +2,22 @@ import { Outlet, Link } from "react-router-dom";
 
 export default function AppContainer() {
   return (
-    <div>
-      <h1>App</h1>
-      <nav className="navbar">
-        <Link to="/">Home</Link>
-        <Link to="about">About</Link>
-        <Link to="profile">Profile</Link>
-      </nav>
-      <Outlet />
+    <div className="App-Container">
+      <div className="App-content-container">
+        <div className="app-conteiner-nav">
+          <nav className="navbar">
+            <Link to="/">Home</Link>
+            <Link to="about">About</Link>
+            <Link to="profile">Profile</Link>
+          </nav>
+        </div>
+        <div className="app-conteiner-content">
+          <div>
+          <Outlet />
+
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
