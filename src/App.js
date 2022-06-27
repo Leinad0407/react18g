@@ -20,11 +20,12 @@ function App() {
         </nav>
       </div> */}
       <Routes>
-        <Route path="/" element={<p>Landing page</p>} />
+        {/* <Route path="/" element={<p>Landing page</p>} />
         {/* <Route path="/about" element={<About />} />
         <Route path="/profile" element={<Profile />} /> */}
-        <Route path="/login" element={<p>Login</p>} />
-        <Route path="/signup" element={<p>Signup</p>} />
+        {/* <Route path="/login" element={<p>Login</p>} />
+        <Route path="/signup" element={<p>Signup</p>} /> */}
+        */
         <Route path="app" element={<AppContainer />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
