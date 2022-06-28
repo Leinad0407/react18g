@@ -8,6 +8,8 @@ import About from "./pages/About";
 import Profile from "./pages/Profile";
 import AppContainer from "./containers/AppContainer";
 import ProfileContainer from "./containers/ProfileContainer";
+import Create from "./pages/Create";
+import "./pages/Create/create.css";
 
 function App() {
   return (
@@ -33,6 +35,7 @@ function App() {
           <Route path="profile" alement={<ProfileContainer />}>
             <Route index path="detail" element={<Profile />} />
             <Route path="about" element={<About />} />
+            <Route path="create" element={<Create />} />
           </Route>
         </Route>
       </Routes>
