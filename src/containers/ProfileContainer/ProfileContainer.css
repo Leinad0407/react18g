@@ -1,14 +1,16 @@
-.navbarProfile{
-    background-color: rgb(135, 168, 140);
-
-}
-
-.navbarProfile > a {
-    margin: 5px 10px;
+.Profile-container {
+    width: 100%;
+  }
+  
+  .Profile-nav {
+    width: 100%;
+    padding: 10px 0px;
+    background-color: rgb(207, 207, 207);
+  }
+  
+  .Profile-nav > nav > a {
+    color: #434343;
     text-decoration: none;
-    text-align: center;
-
-
-
-}
-
+    cursor: pointer;
+    padding: 0 10px;
+  }

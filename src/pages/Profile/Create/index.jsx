@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { create as createUser } from "../../../services/users";
+import { create as createUser } from "../../../Services/users";
 
 // Toastify
 import { ToastContainer, toast } from "react-toastify";
@@ -61,35 +61,42 @@ export default function ProfileCreate() {
       <h2>Create</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-container">
-          <input
-            placeholder="First Name"
-            value={firstName}
-            callback={(e) => setFirstName(e.target.value)}
-          />
-
-          <input
-            className="input"
-            placeholder="Last Name"
-            value={lastName}
-            callback={(e) => setLastName(e.target.value)}
-          />
+          <div className="form-child">
+            <input
+              className="input"
+              placeholder="First Name"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+            />
+          </div>
+          <div className="form-child">
+            <input
+              className="input"
+              placeholder="Last Name"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+            />
+          </div>
         </div>
         <div className="form-container">
-          <input
-            className="input"
-            placeholder="Photo URL"
-            type="url"
-            value={photoURL}
-            onChange={(e) => setPhotoURL(e.target.value)}
-          />
-
-          <input
-            className="input"
-            placeholder="Email"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
+          <div className="form-child">
+            <input
+              className="input"
+              placeholder="Photo URL"
+              type="url"
+              value={photoURL}
+              onChange={(e) => setPhotoURL(e.target.value)}
+            />
+          </div>
+          <div className="form-child">
+            <input
+              className="input"
+              placeholder="Email"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
         </div>
         <div className="form-container">
           <input
@@ -97,7 +104,7 @@ export default function ProfileCreate() {
             placeholder="Birthdate"
             type="date"
             value={birthdate}
-            callback={(e) => setBirthdate(e.target.value)}
+            onChange={(e) => setBirthdate(e.target.value)}
           />
         </div>
         <button type="submit" className="btn">
